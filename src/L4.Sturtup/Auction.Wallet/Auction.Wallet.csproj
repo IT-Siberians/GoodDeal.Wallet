@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>6e60e66c-1491-460b-95d1-51b07e7e667d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="8.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="GoodDeal.Common.Infrastructure.Repositories" Version="1.0.0" />
+    <PackageReference Include="GoodDeal.Common.Presentation.Validation" Version="1.0.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.66.0" />
+    <PackageReference Include="MassTransit" Version="8.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\L3.Infrastructure\Auction.Wallet.Infrastructure.DbInitialization\Auction.Wallet.Infrastructure.DbInitialization.csproj" />
+    <ProjectReference Include="..\..\L3.Infrastructure\Auction.Wallet.Infrastructure.Repositories\Auction.Wallet.Infrastructure.Repositories.csproj" />
+    <ProjectReference Include="..\..\L3.Presentation\Auction.Wallet.Presentation.GrpcApi\Auction.Wallet.Presentation.GrpcApi.csproj" />
+    <ProjectReference Include="..\..\L3.Presentation\Auction.Wallet.Presentation.MassTransit\Auction.Wallet.Presentation.MassTransit.csproj" />
+    <ProjectReference Include="..\..\L3.Presentation\Auction.Wallet.Presentation.Validation\Auction.Wallet.Presentation.Validation.csproj" />
+    <ProjectReference Include="..\..\L3.Presentation\Auction.Wallet.Presentation.WebApi\Auction.Wallet.Presentation.WebApi.csproj" />
+  </ItemGroup>
+
+</Project>
